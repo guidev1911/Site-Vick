@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victória Menezes</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe4e6;
+      color: #4a4a4a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #d63384;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #6a097d;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 2px solid #d63384;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      margin: 15px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    .card input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #d63384;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: #d63384;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #a52163;
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #6a097d;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Victória Menezes</h1>
+    <h2>Para quando Vick ficar entediada</h2>
+  </header>
+
+  <div class="card">
+    <h3>1. Oque Guilherme mais gosta?</h3>
+    <input type="text" id="answer1" placeholder="Né possível q ce vai errar">
+    <button onclick="checkAnswer(1, 'carros')">Responder</button>
+    <p id="feedback1"></p>
+  </div>
+
+  <div class="card">
+    <h3>2. Complete a frase: "Vick é _____ !</h3>
+    <input type="text" id="answer2" placeholder="Nossa, muito">
+    <button onclick="checkAnswer2(2, 'insuportável')">Responder</button>
+    <p id="feedback2"></p>
+  </div>
+
+  <div class="card">
+    <h3>3. Se não é placa de vídeo nem gráfico integrado, é...??</h3>
+    <input type="text" id="answer3" placeholder="Dica: CPU">
+    <button onclick="checkAnswer3(3, 'apu')">Responder</button>
+    <p id="feedback3"></p>
+  </div>
+
+  <div class="card">
+    <h3>4. Oque é oque é? é usado para curar a tristeza junto com Coraline?</h3>
+    <input type="text" id="answer4" placeholder="deve ser maconha">
+    <button onclick="checkAnswer4(4, 'sorvete')">Responder</button>
+    <p id="feedback4"></p>
+  </div>
+
+  <div class="card">
+    <h3>5. Qual apelido que mais te estressa ?</h3>
+    <input type="text" id="answer5" placeholder="kkkkkkk">
+    <button onclick="checkAnswer5(5, 'pirralha')">Responder</button>
+    <p id="feedback5"></p>
+  </div>
+
+  <script>
+    function checkAnswer(cardNumber, correctAnswer) {
+      const input = document.getElementById(`answer${cardNumber}`);
+      const feedback = document.getElementById(`feedback${cardNumber}`);
+      if (input.value.toLowerCase() === correctAnswer) {
+        feedback.textContent = "Boaaa 🎉";
+      } else {
+        feedback.textContent = "Não acredito nisso vick ❌";
+      }
+    }
+
+    function checkAnswer2(cardNumber, correctAnswer) {
+      const input = document.getElementById(`answer${cardNumber}`);
+      const feedback = document.getElementById(`feedback${cardNumber}`);
+      if (input.value.toLowerCase() === correctAnswer) {
+        feedback.textContent = "brincadeira viu 🎉";
+      } else {
+        feedback.textContent = "Se errou é porque tem muitos kkk ❌";
+      }
+    }
+
+    function checkAnswer3(cardNumber, correctAnswer) {
+      const input = document.getElementById(`answer${cardNumber}`);
+      const feedback = document.getElementById(`feedback${cardNumber}`);
+      if (input.value.toLowerCase() === correctAnswer) {
+        feedback.textContent = "Pesquisou na internet";
+      } else {
+        feedback.textContent = "Bobinha acreditou mesmo ❌";
+      }
+    }
+
+    function checkAnswer4(cardNumber, correctAnswer) {
+      const input = document.getElementById(`answer${cardNumber}`);
+      const feedback = document.getElementById(`feedback${cardNumber}`);
+      if (input.value.toLowerCase() === correctAnswer) {
+        feedback.textContent = "Resposta correta! 🎉";
+      } else {
+        feedback.textContent = "Resposta errada. Como assim vick? ❌";
+      }
+    }
+
+    function checkAnswer5(cardNumber, correctAnswer) {
+      const input = document.getElementById(`answer${cardNumber}`);
+      const feedback = document.getElementById(`feedback${cardNumber}`);
+      if (input.value.toLowerCase() === correctAnswer) {
+        feedback.textContent = "Acertou pirallha";
+      } else {
+        feedback.textContent = "Resposta errada, pirallha ❌";
+      }
+    }
+  </script>
+</body>
+</html>
